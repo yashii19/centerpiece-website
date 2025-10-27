@@ -19,6 +19,11 @@ body {
     min-height: 100vh; /* garantit la hauteur totale */
 }
 
+.diary-photo {
+  display: flex;
+  width: 70%;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
