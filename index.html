@@ -16,7 +16,7 @@
         </div>
         
         <h1><a href="index.html">Centerpiece</a></h1>
-        <p>Your Curated Home</p>
+        <p class="tagline">Your Curated Home</p>
         
         <div class="header-links">
             <a href="https://www.instagram.com/centerpiece___/" target="_blank">Instagram</a>
@@ -26,10 +26,14 @@
 
 
     <main>
-        <img class="logo-img" src="images/logo.jpg" alt="Chrome circle">
+        <img class="logo" src="images/logo.jpg" alt="Chrome circle">
               
         <form class="newsletter" id="newsletter-form" action="https://formspree.io/f/xldogjbb" method="POST">
-            <input type="email" name="email" id="email-input" placeholder="Enter your email" required>
+            <input type="email" 
+                   name="email" 
+                   id="email-input" 
+                   placeholder="Enter your email" 
+                   required>
             <button type="submit">Subscribe</button>
         </form>
  
@@ -46,39 +50,39 @@
     </footer>
 
     <script>
-  const form = document.getElementById('newsletter-form');
-  console.log("form is", form); // debug visuel
+        const form = document.getElementById('newsletter-form');
+        console.log("form is", form); // debug visuel
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    console.log("preventDefault ran");
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            console.log("preventDefault ran");
 
-    const data = new FormData(form);
+            const data = new FormData(form);
 
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-      console.log("res status", res.status);
+                console.log("res status", res.status);
 
-      if (res.ok) {
-        document.getElementById('success-message').style.display = 'block';
-        document.getElementById('error-message').style.display = 'none';
-        form.reset();
-      } else {
-        document.getElementById('success-message').style.display = 'none';
-        document.getElementById('error-message').style.display = 'block';
-      }
-    } catch (err) {
-      console.log("fetch error", err);
-      document.getElementById('success-message').style.display = 'none';
-      document.getElementById('error-message').style.display = 'block';
-    }
-  });
-</script>
+                if (res.ok) {
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('error-message').style.display = 'none';
+                    form.reset();
+                } else {
+                    document.getElementById('success-message').style.display = 'none';
+                    document.getElementById('error-message').style.display = 'block';
+                }
+            } catch (err) {
+                console.log("fetch error", err);
+                document.getElementById('success-message').style.display = 'none';
+                document.getElementById('error-message').style.display = 'block';
+            }
+         });
+    </script>
 
   </body>
 </html>
