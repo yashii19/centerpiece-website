@@ -10,6 +10,7 @@ html, body {
   margin: 0;
   padding: 0;
   text-align: center;
+  overflow-x: hidden; /* évite aussi le scroll horizontal */
 
 }
 
@@ -40,12 +41,6 @@ footer {
   padding: 20px 10px;
   margin-top: auto; /* pousse le footer en bas */
 }
-
-
-img {
-    padding: 20px 0 0 20px;
-}
-
 
 h1 a {
   text-decoration: none;  /* enlève le soulignement */
@@ -116,7 +111,8 @@ header h1 {
 
 .logo {
   width: 30%;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 
@@ -133,8 +129,9 @@ header h1 {
 
 @media (max-width: 600px) {
    .diary-photo {
-    width: 100%;           /* prend toute la largeur de l’écran */
-    padding: 0 10px 10px 0;       /* petit padding latéral */
+    width: calc(100% - 20px);  /* retire 10px de chaque côté */
+    margin: 0 auto;            /* centre le tout */
+    padding: 0;                /* supprime le padding intérieur */
   }
 
   .diary-photo img {
