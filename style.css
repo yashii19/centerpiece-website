@@ -21,7 +21,16 @@ body {
 
 .diary-photo {
   display: flex;
+  flex-direction: column;  /* les images s’empilent */
+  align-items: center;     /* elles sont centrées */
   width: 70%;
+  margin: 0 auto;          /* centre le conteneur */
+}
+
+.diary-photo img {
+  width: 100%;             /* image prend la largeur du conteneur */
+  height: auto;            /* conserve les proportions */
+  margin-bottom: 20px;     /* petit espace entre les photos */
 }
 
 footer {
@@ -123,8 +132,14 @@ header h1 {
 
 
 @media (max-width: 600px) {
-  .diary-photo {
-    width: 100%;
+   .diary-photo {
+    width: 100%;           /* prend toute la largeur de l’écran */
+    padding: 0 10px;       /* petit padding latéral */
+  }
+
+  .diary-photo img {
+    width: 100%;           /* ne déborde jamais */
+    height: auto;
   }
 
   header {
