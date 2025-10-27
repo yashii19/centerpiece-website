@@ -134,7 +134,7 @@ header h1 {
 @media (max-width: 600px) {
    .diary-photo {
     width: 100%;           /* prend toute la largeur de l’écran */
-    padding: 0 10px;       /* petit padding latéral */
+    padding: 0 10px 10px 0;       /* petit padding latéral */
   }
 
   .diary-photo img {
