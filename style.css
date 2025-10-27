@@ -22,16 +22,17 @@ body {
 
 .diary-photo {
   display: flex;
-  flex-direction: column;  /* les images s’empilent */
-  align-items: center;     /* elles sont centrées */
+  flex-wrap: wrap;         /* permet aux images de passer à la ligne si besoin */
+  justify-content: center;
+  gap: 20px;
   width: 70%;
-  margin: 0 auto;          /* centre le conteneur */
+  margin: 0 auto;
 }
 
 .diary-photo img {
-  width: 100%;             /* image prend la largeur du conteneur */
-  height: auto;            /* conserve les proportions */
-  margin-bottom: 20px;     /* petit espace entre les photos */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 footer {
@@ -128,15 +129,16 @@ header h1 {
 
 
 @media (max-width: 600px) {
-   .diary-photo {
-    width: calc(100% - 20px);  /* retire 10px de chaque côté */
-    margin: 0 auto;            /* centre le tout */
-    padding: 0;                /* supprime le padding intérieur */
+  .diary-photo {
+    width: 100%;
+    flex-direction: column;   /* empile les images */
+    align-items: center;      /* centre-les */
   }
 
   .diary-photo img {
-    width: 100%;           /* ne déborde jamais */
+    width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   header {
