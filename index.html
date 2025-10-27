@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centerpiece</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.jpg">
+  </head>
+  <body>
+
+    <header>
+        <div class="header-menu">
+            <a href="pages/dairy.html">Diary</a>
+            <a href="pages/informations.html">Informations</a>
+        </div>
+        
+        <h1><a href="index.html">Centerpiece</a></h1>
+        <p style="margin-bottom: 20px;">Your Curated Home</p>
+        
+        <div class="header-links">
+            <a href="https://www.instagram.com/centerpiece___/" target="_blank">Instagram</a>
+        </div>
+    </header> 
+    
+
+
+    <main>
+
+    
+        <img src="images/logo.jpg" alt="Chrome circle" width="23%" style="margin-bottom: 50px; margin-top: 50px;">
+              
+        <form class="newsletter" id="newsletter-form" action="https://formspree.io/f/xldogjbb" method="POST">
+            <input type="email" name="email" id="email-input" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+
+
+ 
+        <p class="legal">Subscribe for exclusive updates on events and collaborations.<br> 
+                By subscribing to the newsletter, you are agreeing to our privacy policy.</p>
+
+
+        <p class="success-message" id="success-message">You're in.</p>
+        <p class="error-message" id="error-message">Something went wrong.</p>
+    </main>
+
+    <footer>
+        <p>© 2025 Centerpiece. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+  const form = document.getElementById('newsletter-form');
+  console.log("form is", form); // debug visuel
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    console.log("preventDefault ran");
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      console.log("res status", res.status);
+
+      if (res.ok) {
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('error-message').style.display = 'none';
+        form.reset();
+      } else {
+        document.getElementById('success-message').style.display = 'none';
+        document.getElementById('error-message').style.display = 'block';
+      }
+    } catch (err) {
+      console.log("fetch error", err);
+      document.getElementById('success-message').style.display = 'none';
+      document.getElementById('error-message').style.display = 'block';
+    }
+  });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'ITCGaramondBoldNarrow';
+  src: url('fonts/ITC_Garamond_Std_Bold_Narrow.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;          /* la page prend toute la hauteur de la fenêtre */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* garantit la hauteur totale */
+}
+
+header {
+  position: relative;
+  height: auto;              /* pas de hauteur fixe */
+  padding-top: 10px;         /* petit espace au-dessus du titre */
+  text-align: center;        /* centre le titre */
+}
+
+.header-menu {
+  position: absolute;
+  top: 10px;                 /* colle le bloc en haut */
+  left: 10px;               /* espace à droite */
+  display: flex;
+
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.header-menu a:hover {
+  opacity: 0.6;
+}
+
+.header-links {
+  position: absolute;
+  top: 10px;                 /* colle le bloc en haut */
+  right: 10px;               /* espace à droite */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.header-links a:hover {
+  opacity: 0.6;
+}
+
+h1 {
+  font-family: 'ITCGaramondBoldNarrow', serif;
+  font-size: 48px;
+  margin: 0;                 /* enlève toute marge inutile */
+  line-height: 1;            /* resserre légèrement */
+}
+
+h1 a {
+  text-decoration: none;  /* enlève le soulignement */
+  color: inherit;         /* garde la couleur du h1 */
+  cursor: pointer;        /* curseur clic */
+}
+
+p {
+    font-family: 'Times New Roman';
+}
+
+img {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  padding: 20px 10px;
+  margin-top: auto; /* pousse le footer en bas */
+}
+
+/* texte sous le formulaire */
+.legal {
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #777;
+  max-width: 320px;
+  margin: 20px auto 20px;
+}
+
+/* messages de feedback */
+.success-message,
+.error-message {
+  font-family: 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  display: none; /* cachés par défaut */
+}
+
+.success-message {
+  color: black;
+}
+
+.error-message {
+  color: #b00000;
+}
+
+main {
+  flex: 1;                          /* prend tout l’espace entre header et footer */
+  display: flex;                    /* active le mode flex */
+  flex-direction: column;           /* empile verticalement le contenu */
+  align-items: center;              /* centre horizontalement */
+  justify-content: center;          /* centre verticalement */
+  text-align: center;
+}
+
+
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centre horizontalement */
+  gap: 10px; /* espace entre le champ et le bouton */
+}
+
+/* Le champ email */
+.newsletter input {
+  border: none;
+  border-bottom: 1px solid #ccc; /* ligne fine en bas */
+  background: transparent;
+  padding: 5px 0;
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  outline: none;
+  color: black;
+  width: 180px;
+  text-align: left;
+}
+
+/* Le bouton "Subscribe" */
+.newsletter button {
+  border: none;
+  background: none;
+  color: black;
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 10px; /* espace pour le point */
+}
+
+/* Le point avant le texte */
+.newsletter button::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: black;
+}
+
+/* Effet hover léger */
+.newsletter button:hover {
+  opacity: 0.7;
+}
